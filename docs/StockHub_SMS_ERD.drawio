@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net" modified="2026-05-29T00:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="stockhub-sms-erd" name="StockHub SMS ERD">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="product" value="Product&#xa;PK productCode&#xa;productName&#xa;category&#xa;quantityInStock&#xa;unitPrice&#xa;supplierName&#xa;dateReceived" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fontStyle=1;fillColor=#e0f2fe;strokeColor=#0284c7;" vertex="1" parent="1">
+          <mxGeometry x="110" y="120" width="250" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="warehouse" value="Warehouse&#xa;PK warehouseCode&#xa;warehouseName&#xa;warehouseLocation" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fontStyle=1;fillColor=#dcfce7;strokeColor=#16a34a;" vertex="1" parent="1">
+          <mxGeometry x="110" y="430" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="transaction" value="StockTransaction&#xa;PK transactionId&#xa;FK productCode&#xa;FK warehouseCode&#xa;transactionDate&#xa;quantityMoved&#xa;transactionType" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fontStyle=1;fillColor=#fef3c7;strokeColor=#d97706;" vertex="1" parent="1">
+          <mxGeometry x="610" y="260" width="260" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="productRel" value="1 to many" style="endArrow=ERmany;startArrow=ERone;html=1;rounded=0;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="product" target="transaction">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="warehouseRel" value="1 to many" style="endArrow=ERmany;startArrow=ERone;html=1;rounded=0;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="warehouse" target="transaction">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
